@@ -1,0 +1,16 @@
+replicas: 1
+
+ingress:
+  fqdn: api.flybywiresim.com
+  tls:
+    enabled: true
+    issuer: letsencrypt-prod
+
+
+database:
+  host: private-mysql-flybywiresim-do-user-8167919-0.b.db.ondigitalocean.com
+  port: 25060
+  database: cdn_downloads
+  user: cdn_downloads
+
+urlPrefix: https://flybywiresim-packages.nyc3.cdn.digitaloceanspaces.com

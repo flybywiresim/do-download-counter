@@ -1,0 +1,23 @@
+{
+  "name": "do-download-counter",
+  "version": "0.1.0",
+  "description": "Redirects a request to a URL while logging it to MySQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "FlyByWire Simulations",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flybywiresim/do-download-counter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flybywiresim/do-download-counter/issues"
+  },
+  "homepage": "https://github.com/flybywiresim/do-download-counter#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5"
+  }
+}

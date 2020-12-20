@@ -1,0 +1,15 @@
+apiVersion: v1
+appVersion: v0.0.1
+version: 0.0.1
+name: do-download-counter
+description: FlyByWire Simulations Download Counter
+icon: https://raw.githubusercontent.com/flybywiresim/fbw-branding/master/svg/FBW-Logo.svg
+sources:
+  - https://github.com/flybywiresim/do-download-counter
+keywords:
+  - fs2020
+  - fbw
+  - DigitalOcean
+  - do
+  - CDN
+home: http://flybywiresim.com
