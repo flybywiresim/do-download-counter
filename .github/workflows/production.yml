@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Lint Helm
-        run: helm lint ./charts/fbw-api
+        run: helm lint ./charts/do-download-counter
   build_and_push:
     runs-on: ubuntu-latest
     steps:
