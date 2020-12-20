@@ -1,6 +1,9 @@
 const mysql = require('mysql2');
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 
 const connection = mysql.createConnection({
     host     : process.env.DATABASE_HOST,
@@ -20,7 +23,9 @@ connection.connect(function(err) {
 
     console.log('connected as id ' + connection.threadId);
 
-    app.listen(3000);
+    app.listen(3000, function () {
+        console.log('Web server listening on port 3000');
+    });
 });
 
 app.get('/api/v1/download/_count', function (req, res) {
