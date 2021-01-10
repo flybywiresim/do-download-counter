@@ -23,3 +23,10 @@ spec:
                 name: {{ .Release.Name }}
                 port:
                   number: {{ .Values.service.port }}
+          - path: /installer
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Release.Name }}
+                port:
+                  number: {{ .Values.service.port }}

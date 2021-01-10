@@ -32,6 +32,8 @@ spec:
 
             - name: URL_PREFIX
               value: {{ .Values.urlPrefix }}
+            - name: INSTALLER_URL
+              value: {{ .Values.installerUrl }}
 
             # DATABASE
             - name: DATABASE_HOST

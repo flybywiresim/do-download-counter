@@ -14,6 +14,7 @@ const connection = mysql.createConnection({
 });
 
 const requiredPrefix = process.env.URL_PREFIX;
+const installerUrl = process.env.INSTALLER_URL;
 
 connection.connect(function(err) {
     if (err) {
@@ -69,6 +70,10 @@ app.get('/api/v1/download', function (req, res) {
     );
 
     res.redirect(url);
+});
+
+app.get('/installer', function (req, res) {
+    res.redirect(installerUrl);
 });
 
 app.get('/health', function (req, res) {

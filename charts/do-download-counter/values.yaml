@@ -22,3 +22,4 @@ database:
   password: somePassword
 
 urlPrefix: https://your-url
+installerUrl: https://your-url
