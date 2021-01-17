@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 const requiredPrefix = process.env.URL_PREFIX;
 const installerUrl = process.env.INSTALLER_URL;
 
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) {
         console.error('error connecting: ' + err.stack);
         return;
@@ -24,14 +24,28 @@ connection.connect(function(err) {
 
     console.log('connected as id ' + connection.threadId);
 
-    app.listen(3000, function () {
-        console.log('Web server listening on port 3000');
+    connection.execute(`CREATE TABLE IF NOT EXISTS downloads
+                        (
+                            id        int auto_increment,
+                            timestamp datetime(6) default NULL null,
+                            url       varchar(1000) default NULL null,
+                            CONSTRAINT downloads_pk
+                                PRIMARY KEY (id)
+                        )`, [], function (err, result) {
+        if (err) {
+            console.error(err);
+            process.exit(1);
+        }
+
+        app.listen(3000, function () {
+            console.log('Web server listening on port 3000');
+        });
     });
 });
 
 app.get('/api/v1/download/_count', function (req, res) {
     connection.execute(
-        'SELECT COUNT(*) as cnt FROM downloads',
+        'SELECT COUNT(*) AS cnt FROM downloads',
         [],
         function (err, result) {
             if (err) {
