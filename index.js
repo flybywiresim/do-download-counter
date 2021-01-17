@@ -80,7 +80,7 @@ app.get('/health', function (req, res) {
     connection.ping(function (err) {
         if (err) {
             console.error(err);
-            res.json({}).status(500);
+            res.status(500).json({});
             return;
         }
 
