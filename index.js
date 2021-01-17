@@ -62,9 +62,6 @@ app.get('/api/v1/download', function (req, res) {
         function (err) {
             if (err) {
                 console.error(err);
-
-                // Force restart
-                throw err;
             }
         }
     );
