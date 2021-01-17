@@ -4,6 +4,7 @@
   "description": "Redirects a request to a URL while logging it to MySQL",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node scripts/secrets.js",
     "start": "node index.js"
   },
   "author": "FlyByWire Simulations",

@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  mysql:
+    image: mysql:latest
+    container_name: do-download-mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
+      - MYSQL_DATABASE=cdn_downloads
+      - MYSQL_USER=cdn_downloads
+      - MYSQL_PASSWORD_FILE=/run/secrets/db_password
+    secrets:
+      - db_root_password
+      - db_password
+    ports:
+      - 13306:3306
+    networks:
+      - do-download-counter
+
+secrets:
+  db_password:
+    file: secrets/db_password
+  db_root_password:
+    file: secrets/db_root_password
+
+networks:
+  do-download-counter:
+    driver: bridge
