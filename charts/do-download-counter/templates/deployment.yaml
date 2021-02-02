@@ -30,8 +30,8 @@ spec:
             - name: NODE_ENV
               value: production
 
-            - name: URL_PREFIX
-              value: {{ .Values.urlPrefix }}
+            - name: URL_PREFIXES
+              value: {{ .Values.urlPrefixes }}
             - name: INSTALLER_URL
               value: {{ .Values.installerUrl }}
 

@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
     database : process.env.DATABASE_DATABASE
 });
 
-const requiredPrefix = process.env.URL_PREFIX;
+const requiredPrefixes = process.env.URL_PREFIXES.split(';');
 const installerUrl = process.env.INSTALLER_URL;
 
 connection.connect(function (err) {
@@ -65,7 +65,7 @@ app.get('/api/v1/download/_count', function (req, res) {
 app.get('/api/v1/download', function (req, res) {
     const url = req.query.url;
 
-    if (!url.startsWith(requiredPrefix)) {
+    if (!requiredPrefixes.some(x => url.startsWith(x))) {
         res.json({error: "Invalid URL"}).status(400);
         return;
     }

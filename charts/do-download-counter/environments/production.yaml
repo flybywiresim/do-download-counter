@@ -13,5 +13,5 @@ database:
   database: cdn_downloads
   user: cdn_downloads
 
-urlPrefix: https://flybywiresim-packages.nyc3.cdn.digitaloceanspaces.com
+urlPrefixes: https://flybywiresim-packages.nyc3.cdn.digitaloceanspaces.com;https://flybywire.b-cdn.net
 installerUrl: https://flybywiresim-packages.nyc3.cdn.digitaloceanspaces.com/installer/setup.exe
