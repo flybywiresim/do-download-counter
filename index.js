@@ -66,8 +66,7 @@ app.get('/api/v1/download', function (req, res) {
     const url = req.query.url;
 
     if (!requiredPrefixes.some(x => url.startsWith(x))) {
-        res.json({error: "Invalid URL"}).status(400);
-        return;
+        return res.status(400).json({error: "Invalid URL"});
     }
 
     connection.execute(
